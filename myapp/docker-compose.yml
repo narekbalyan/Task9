@@ -1,0 +1,15 @@
+version: "3.9"
+  services:
+    first:
+      build:
+        context: .
+      ports: 
+        - "3001:3001"
+      depends_on:
+        - db
+      volumes:
+        .:/src
+    db:
+      image: mysql
+      ports:
+        - "3000:3000"
